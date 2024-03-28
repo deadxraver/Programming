@@ -1,4 +1,4 @@
-import mainPack.Program;
+import main.Program;
 
 public class Main {
 
