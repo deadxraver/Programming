@@ -8,7 +8,7 @@ package elements;
  * y cannot be null and should not be greater than 274
  */
 public class Coordinates {
-    public Coordinates(float x, double y) {
+    public Coordinates(Float x, Double y) {
         this.x = x;
         this.y = y;
     }
