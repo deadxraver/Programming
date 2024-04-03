@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01873605-68c2-47a9-89b7-37b1792d9a65" name="Changes" comment="feat: added MovieGenerator used for update, add and add_if_max commands&#10;fixed: added several exceptions and parser in order to make work with project easier&#10;to-be-fixed: all TODOs and connect to server">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/ExecuteScript.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/MovieGenre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/MpaaRating.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/main/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/mainpack/Program.java" beforeDir="false" />
-    </list>
+    <list default="true" id="01873605-68c2-47a9-89b7-37b1792d9a65" name="Changes" comment="Minor changes, need to reinstall windows" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,6 +104,7 @@
       <workItem from="1712098490810" duration="26000" />
       <workItem from="1712152964300" duration="900000" />
       <workItem from="1712159072728" duration="636000" />
+      <workItem from="1712173968390" duration="73000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -156,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711667942808</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Minor changes, need to reinstall windows">
+      <option name="closed" value="true" />
+      <created>1712174033077</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712174033077</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +159,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Started with making some empty or almost file" />
     <MESSAGE value="feat: added MovieGenerator used for update, add and add_if_max commands&#10;fixed: added several exceptions and parser in order to make work with project easier&#10;to-be-fixed: all TODOs and connect to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added MovieGenerator used for update, add and add_if_max commands&#10;fixed: added several exceptions and parser in order to make work with project easier&#10;to-be-fixed: all TODOs and connect to server" />
+    <MESSAGE value="Minor changes, need to reinstall windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes, need to reinstall windows" />
   </component>
 </project>
