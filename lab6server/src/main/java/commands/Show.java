@@ -1,20 +1,22 @@
 package commands;
 
-import elementsPack.Movie;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.Movie;
+import elements.MovieCollection;
 
-/**
- * Class storing method show
- */
-public class Show extends Info implements commandInterfacePack.Show {
-    protected Show() {}
+import java.io.Serial;
+import java.io.Serializable;
 
-    /**
-     * This method prints all the movies stored in the collection
-     */
+public class Show implements Command, Serializable {
     @Override
-    public void show() {
-        for (Movie movie : collection.getCollection()) {
-            System.out.println(movie);
-        }
+    public Message execute(MovieCollection movieCollection, Object object) {
+        return new Message(
+                false,
+                movieCollection.toString()
+        );
     }
+
+    @Serial
+    private static final long serialVersionUID = -2051979921933526308L;
 }

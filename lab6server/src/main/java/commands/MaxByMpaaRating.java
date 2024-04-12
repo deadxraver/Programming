@@ -1,20 +1,29 @@
 package commands;
 
-import elementsPack.Movie;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
+import exceptions.EmptyCollectionException;
 
-/**
- * Class storing method maxByMpaaRating method
- */
-public class MaxByMpaaRating extends RemoveAllByOscarsCount implements commandInterfacePack.MaxByMpaaRating {
-    protected MaxByMpaaRating() {}
+import java.io.Serial;
+import java.io.Serializable;
 
-    /**
-     * This method prints element with max mpaaRating field
-     */
+public class MaxByMpaaRating implements Command, Serializable {
     @Override
-    public void maxByMpaaRating() {
-        Movie movie = collection.getMaxMpaaRatingElement();
-        if (movie == null) System.out.println("Collection is empty");
-        else System.out.println(movie);
+    public Message execute(MovieCollection movieCollection, Object object) {
+        try {
+            return new Message(
+                    false,
+                    movieCollection.getMpaaMax().toString()
+            );
+        } catch (EmptyCollectionException e) {
+            return new Message(
+                    true,
+                    e.getMessage()
+            );
+        }
     }
+
+    @Serial
+    private static final long serialVersionUID = -1737272390454927855L;
 }

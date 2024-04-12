@@ -1,18 +1,22 @@
 package commands;
 
-import mainPack.MovieCollection;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
 
-/**
- * Class storing method clear
- */
-public class Clear extends RemoveById implements commandInterfacePack.Clear {
-    protected Clear() {}
+import java.io.Serial;
+import java.io.Serializable;
 
-    /**
-     * This method erases previously stored collection (this doesn't affect file)
-     */
+public class Clear implements Command, Serializable {
     @Override
-    public void clear() {
-        collection = new MovieCollection();
+    public Message execute(MovieCollection movieCollection, Object object) {
+        movieCollection.clear();
+        return new Message(
+                false,
+                "Collection successfully cleared"
+        );
     }
+
+    @Serial
+    private static final long serialVersionUID = -717981351376024031L;
 }

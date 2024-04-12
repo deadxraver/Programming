@@ -109,7 +109,6 @@ public class Movie implements Comparable<Movie>, Serializable {
     public void setOperator(Person operator) {
         this.operator = operator;
     }
-
     @Override
     public String toString() {
         return "id: " + id +
@@ -124,7 +123,8 @@ public class Movie implements Comparable<Movie>, Serializable {
 
     @Override
     public int compareTo(Movie movie) {
-        return movie == null ? -1 : Long.compare(this.oscarsCount, movie.oscarsCount);
+        return movie == null ? -1 :
+                Double.compare(this.coordinates.getLength(), movie.coordinates.getLength());
     }
 
     @Override

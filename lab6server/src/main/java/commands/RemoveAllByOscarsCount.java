@@ -1,38 +1,28 @@
 package commands;
 
-import elementsPack.Movie;
-import exceptionsPack.NullFieldException;
-import parserPack.IntParser;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
 
-/**
- * Class storing method removeAllByOscarsCount
- */
-public class RemoveAllByOscarsCount extends RemoveLower implements commandInterfacePack.RemoveAllByOscarsCount {
-    protected RemoveAllByOscarsCount() {}
+import java.io.Serial;
+import java.io.Serializable;
 
-    /**
-     * This method removes all the elements having the same oscarsCount field as entered
-     */
+public class RemoveAllByOscarsCount implements Command, Serializable {
     @Override
-    public void removeAllByOscarsCount() {
-        int oscarsCount;
-        try {
-            oscarsCount = IntParser.parse(reader.next());
-        } catch (NullFieldException e) {
-            System.err.println("Field cannot be null");
-            return;
-        } catch (NumberFormatException e) {
-            System.err.println("Wrong number format");
-            return;
+    public Message execute(MovieCollection movieCollection, Object object) {
+        if (movieCollection.removeByOscar((Integer) object)) {
+            return new Message(
+                    false,
+                    "Movies with such oscars count have been successfully deleted"
+            );
+        } else {
+            return new Message(
+                    true,
+                    "No matches found"
+            );
         }
-        boolean t = false;
-        for (Movie movie : collection.getCollection()) {
-            if (movie.getOscarsCount() == oscarsCount) {
-                collection.removeElement(movie);
-                t = true;
-            }
-        }
-        if (t) System.out.println("Movie(-s) removed successfully");
-        else System.out.println("No such elements in the collection");
     }
+
+    @Serial
+    private static final long serialVersionUID = -3928714350596327042L;
 }

@@ -1,4 +1,4 @@
-import main.Program;
+import main.*;
 
 import java.io.IOException;
 

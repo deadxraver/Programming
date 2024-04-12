@@ -1,5 +1,10 @@
 package commandhelper;
+
+import elements.Movie;
+import elements.MovieCollection;
+
+
 @FunctionalInterface
 public interface Command {
-    String execute();
+    Message execute(MovieCollection movieCollection, Object object);
 }

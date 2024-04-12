@@ -1,23 +1,30 @@
 package commands;
 
-import elementsPack.Person;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
+import elements.Person;
 
-import java.util.LinkedList;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Arrays;
 
-/**
- * Class storing method printFieldAscendingOperator
- */
-public class PrintFieldAscendingOperator extends MaxByMpaaRating implements commandInterfacePack.PrintFieldAscendingOperator {
-    protected PrintFieldAscendingOperator() {}
+public class PrintFieldAscendingOperator implements Command, Serializable {
 
-    /**
-     * This method prints operators ascending
-     */
     @Override
-    public void printFieldAscendingOperator() {
-        LinkedList<Person> people = collection.getOperatorsSorted();
+    public Message execute(MovieCollection movieCollection, Object object) {
+        StringBuilder builder = new StringBuilder();
+        Person[] people = movieCollection.getOperatorList();
+        Arrays.sort(people);
         for (Person person : people) {
-            System.out.println(person);
+            builder.append(person);
         }
+        return new Message(
+                false,
+                builder.toString()
+        );
     }
+
+    @Serial
+    private static final long serialVersionUID = 3073911489917437176L;
 }

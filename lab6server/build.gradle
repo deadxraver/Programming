@@ -13,6 +13,7 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.14'
+    testImplementation group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.8'
 }
 
 test {

@@ -1,21 +1,32 @@
 package commands;
 
-/**
- * Class storing method removeHead
- */
-public class RemoveHead extends Exit implements commandInterfacePack.RemoveHead{
-    protected RemoveHead() {}
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
+import exceptions.EmptyCollectionException;
+import exceptions.NoSuchMovieException;
 
-    /**
-     * This method removes the first collection element if it has it
-     */
+import java.io.Serial;
+import java.io.Serializable;
+
+public class RemoveHead implements Command, Serializable {
     @Override
-    public void removeHead() {
-        if (!collection.getCollection().isEmpty()) {
-            collection.removeElement(collection.getCollection().getFirst());
-            System.out.println("Movie successfully deleted!");
-            return;
+    public Message execute(MovieCollection movieCollection, Object object) {
+        try {
+            movieCollection.removeMovie(movieCollection.getMax().getId());
+        } catch (EmptyCollectionException e) {
+            return new Message(
+                    true,
+                    e.getMessage()
+            );
+        } catch (NoSuchMovieException ignored) {
         }
-        System.out.println("Collection is empty!");
+        return new Message(
+                false,
+                "Movie successfully deleted"
+        );
     }
+
+    @Serial
+    private static final long serialVersionUID = -925527377588774830L;
 }

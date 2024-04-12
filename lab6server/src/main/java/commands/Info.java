@@ -1,24 +1,22 @@
 package commands;
 
-import elementsPack.Movie;
+import commandhelper.Command;
+import commandhelper.Message;
+import elements.MovieCollection;
 
-/**
- * Class storing method info
- */
-public class Info extends Help implements commandInterfacePack.Info {
-    protected Info() {
-        super();
-    }
+import java.io.Serial;
+import java.io.Serializable;
 
-    /**
-     * This method prints main info about current collection
-     */
+public class Info implements Command, Serializable {
     @Override
-    public void info() {
-        int n = 0;
-        System.out.println("Collection type: " + Movie.class.getSimpleName() +
-                "\nDate of initialization: " + collection.getDateOfCreation() +
-                "\nNumber of elements stored: " + collection.getNumberOfElements() +
-                '\n');
+    public Message execute(MovieCollection movieCollection, Object object) {
+        return new Message(false,
+                "Number of movies: " + movieCollection.getNumberOfMovies() +
+                "\nDate of creation: " + movieCollection.getCreationDate() +
+                "\nCollection type: " + movieCollection.getCollectionType()
+        );
     }
+
+    @Serial
+    private static final long serialVersionUID = -5276054172780947277L;
 }

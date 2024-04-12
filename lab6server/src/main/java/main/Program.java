@@ -1,18 +1,26 @@
 package main;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
 
+import com.thoughtworks.xstream.XStream;
+import annotations.MainMethod;
 import clientcommunication.RequestPackage;
 import clientcommunication.ResponsePackage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+import com.thoughtworks.xstream.security.TypePermission;
+import commandhelper.Message;
+import elements.MovieCollection;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import parsers.CollectionParser;
+import parsers.FileDataParser;
 // + Модуль приёма подключений.
 // + Модуль чтения запроса.
 // - Модуль обработки полученных команд.
@@ -24,13 +32,21 @@ public class Program {
         createChannel();
         sc = null;
         waitingForMovie = false;
-        logger = LoggerFactory.getLogger(this.getClass());
+//        logger = LoggerFactory.getLogger(this.getClass());
+        xStream = new XStream();
+        xStream.addPermission(AnyTypePermission.ANY);
+        collection = CollectionParser.parse((MovieCollection) xStream.fromXML(FileDataParser.parse(System.getenv("COLLECTION"))));
     }
     public final int port;
-    private Logger logger;
+//    private Logger logger;
     private ServerSocketChannel ssc;
     private SocketChannel sc;
     private boolean waitingForMovie;
+    private final MovieCollection collection;
+    private final XStream xStream;
+
+
+    @MainMethod
     public void execute() {
         try {
             createChannel();
@@ -42,9 +58,12 @@ public class Program {
             while (true) {
                 if (!acceptConnection()) continue; // todo (try reading from console)
                 RequestPackage<?> requestPackage = getRequest();
-
+                assert requestPackage != null;
+                Message message = requestPackage.command().execute(collection, requestPackage.argument());
             }
-        } catch (NoSuchElementException e) {
+        } catch (Throwable e) {
+            String content = xStream.toXML(collection);
+
             // TODO (save the collection)
         }
 
