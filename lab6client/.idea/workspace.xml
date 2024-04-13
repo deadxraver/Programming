@@ -4,60 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01873605-68c2-47a9-89b7-37b1792d9a65" name="Changes" comment="Minor changes, need to reinstall windows">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commandhelper/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commandhelper/LocalCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commandhelper/MovieAdder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Add.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/AddIfMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Clear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Help.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/MaxByMpaaRating.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/PrintFieldAscendingOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveAllByOscarsCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveHead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveLower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Show.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commands/Update.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/elements/MovieCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/localcommands/Exit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servercommunication/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab6server/collection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$CoordinatesHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$CoordinatesHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$PersonHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$PersonHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Coordinates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/main/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/main/Program.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/servercommunication/ResponsePackage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/servercommunication/ResponsePackage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/localcommands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commands/MovieGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commandhelper/MovieGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/elements/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elements/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/CommandType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/RequestPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servercommunication/RequestPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/ResponsePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servercommunication/ResponsePackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/main/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/main/Program.java" afterDir="false" />
+    <list default="true" id="01873605-68c2-47a9-89b7-37b1792d9a65" name="Changes" comment="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/EmptyCollectionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NoSuchMovieException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +60,12 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/deadxraver/Programming.git",
+    "accountId": "9d9a8162-7197-4611-978a-5ea2221672c5"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -131,7 +86,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dead_/IdeaProjects/Programming/lab6client/src/main/java",
+    "last_opened_file_path": "C:/Users/dead_/IdeaProjects/Programming/lab6client/src/main/java/exceptions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -146,6 +101,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dead_\IdeaProjects\Programming\lab6client\src\main\java\exceptions" />
       <recent name="C:\Users\dead_\IdeaProjects\Programming\lab6client\src\main\java" />
       <recent name="C:\Users\dead_\ITMO\git\Programming1\lab6client\src\main\java" />
     </key>
@@ -193,7 +149,7 @@
       <workItem from="1712173968390" duration="73000" />
       <workItem from="1712180080514" duration="93000" />
       <workItem from="1712960563382" duration="652000" />
-      <workItem from="1712965045246" duration="9246000" />
+      <workItem from="1712965045246" duration="9585000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -235,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712174033077</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready">
+      <option name="closed" value="true" />
+      <created>1712975242964</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712975242964</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +213,7 @@
     <MESSAGE value="Started with making some empty or almost file" />
     <MESSAGE value="feat: added MovieGenerator used for update, add and add_if_max commands&#10;fixed: added several exceptions and parser in order to make work with project easier&#10;to-be-fixed: all TODOs and connect to server" />
     <MESSAGE value="Minor changes, need to reinstall windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes, need to reinstall windows" />
+    <MESSAGE value="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready" />
   </component>
 </project>
