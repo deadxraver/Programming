@@ -39,6 +39,9 @@ public class Coordinates implements Serializable {
     public void setY(Double y) {
         this.y = y;
     }
+    public Double getLength() {
+        return Math.pow(Math.pow(x, 2) + Math.pow(y, 2), 0.5);
+    }
     @Serial
     private static final long serialVersionUID = -2506907464839793438L;
 }

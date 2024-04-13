@@ -1,5 +1,6 @@
 package main;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,6 +17,7 @@ import clientcommunication.ResponsePackage;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 import com.thoughtworks.xstream.security.TypePermission;
 import commandhelper.Message;
+import commands.AddIfMax;
 import elements.MovieCollection;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
@@ -59,12 +61,16 @@ public class Program {
                 if (!acceptConnection()) continue; // todo (try reading from console)
                 RequestPackage<?> requestPackage = getRequest();
                 assert requestPackage != null;
+                waitingForMovie = requestPackage.command().getClass().equals(AddIfMax.class);
                 Message message = requestPackage.command().execute(collection, requestPackage.argument());
             }
         } catch (Throwable e) {
             String content = xStream.toXML(collection);
-
-            // TODO (save the collection)
+            try (FileWriter fw = new FileWriter(System.getenv("COLLECTION"))) {
+                fw.write(content);
+            } catch (IOException ex) {
+                System.out.println("No file declared");
+            }
         }
 
     }
