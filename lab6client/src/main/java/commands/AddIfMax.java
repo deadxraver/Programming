@@ -1,8 +1,8 @@
 package commands;
 
 import commandhelper.Command;
+import commandhelper.Message;
 import exceptions.EmptyCollectionException;
-import servercommunication.Message;
 import elements.Movie;
 import elements.MovieCollection;
 

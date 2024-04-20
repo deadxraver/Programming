@@ -1,7 +1,7 @@
 package commands;
 
 import commandhelper.Command;
-import servercommunication.Message;
+import commandhelper.Message;
 import elements.MovieCollection;
 import exceptions.NoSuchMovieException;
 

@@ -14,7 +14,8 @@ public class PrintFieldAscendingOperator implements Command, Serializable {
     @Override
     public Message execute(MovieCollection movieCollection, Object object) {
         StringBuilder builder = new StringBuilder();
-        Person[] people = movieCollection.getOperatorList();
+        Object[] objects = movieCollection.getOperatorList();
+        Person[] people = (Person[]) objects;
         Arrays.sort(people);
         for (Person person : people) {
             builder.append(person);

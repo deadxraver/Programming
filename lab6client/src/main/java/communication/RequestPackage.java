@@ -1,4 +1,4 @@
-package servercommunication;
+package communication;
 
 import commandhelper.Command;
 

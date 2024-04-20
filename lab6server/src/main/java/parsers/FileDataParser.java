@@ -24,7 +24,7 @@ public class FileDataParser {
             String line = allLines[i];
             try {
                 if (line.contains("<id>")) LongParser.parse(line.substring(line.indexOf("<id>") + 4, line.indexOf("</id>")));
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullFieldException e) {
                 line = line.replaceAll("<id>.*</id>", "");
             }
             try {
@@ -37,7 +37,12 @@ public class FileDataParser {
             } catch (NumberOutOfBoundsException | NullFieldException | NumberFormatException e) {
                 line = line.replaceAll("<y>.*</y>", "");
             }
-            if (line.contains("<genre>")) GenreParser.parse(line.substring(line.indexOf("<genre>") + 7, line.indexOf("</genre>")));
+            try {
+                if (line.contains("<genre>"))
+                    GenreParser.parse(line.substring(line.indexOf("<genre>") + 7, line.indexOf("</genre>")));
+            } catch (NullFieldException e) {
+                line = line.replaceAll("<y>.*</y>", "");
+            }
             try {
                 if (line.contains("<creationDate>")) LocalDate.parse(line.substring(line.indexOf("<creationDate>") + 14, line.indexOf("</creationDate>")));
             } catch (DateTimeParseException e) {
@@ -45,10 +50,15 @@ public class FileDataParser {
             }
             try {
                 if (line.contains("<oscarsCount>")) IntParser.parse(line.substring(line.indexOf("<oscarsCount>") + 13, line.indexOf("</oscarsCount>")));
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullFieldException e) {
                 line = line.replaceAll("<oscarsCount>.*</oscarsCount>", "");
             }
-            if (line.contains("<mpaaRating>")) MpaaRatingParser.parse(line.substring(line.indexOf("<mpaaRating>") + 12, line.indexOf("</mpaaRating>")));
+            try {
+                if (line.contains("<mpaaRating>"))
+                    MpaaRatingParser.parse(line.substring(line.indexOf("<mpaaRating>") + 12, line.indexOf("</mpaaRating>")));
+            } catch (IncorrectInputException e) {
+                line = line.replaceAll("<y>.*</y>", "");
+            }
             try {
                 if (line.contains("<birthday>")) LocalDateTime.parse(line.substring(line.indexOf("<birthday>") + 10, line.indexOf("</birthday>")));
             } catch (DateTimeParseException e) {

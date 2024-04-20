@@ -1,0 +1,22 @@
+<elements.MovieCollection>
+  <creationDate>2024-04-13</creationDate>
+  <collection>
+    <elements.Movie>
+      <id>935176301</id>
+      <name>sksfnisefn</name>
+      <coordinates>
+        <x>10.0</x>
+        <y>78.0</y>
+      </coordinates>
+      <creationDate>2024-04-20</creationDate>
+      <oscarsCount>109</oscarsCount>
+      <genre>WESTERN</genre>
+      <mpaaRating>PG</mpaaRating>
+      <operator>
+        <name>neifniefnienf</name>
+        <birthday>2014-10-01T00:00:00</birthday>
+        <hairColor>GREEN</hairColor>
+      </operator>
+    </elements.Movie>
+  </collection>
+</elements.MovieCollection>

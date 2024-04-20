@@ -12,14 +12,17 @@ public class CollectionParser {
      */
     public static MovieCollection parse(MovieCollection movieCollection) {
         MovieCollection parsedMovieCollection = new MovieCollection(movieCollection.getCreationDate());
-        for (Movie movie : movieCollection.getCollection()) {
-            for (Movie movie1 : movieCollection.getCollection()) {
+        for (Object o : movieCollection.getCollection()) {
+            Movie movie = (Movie) o;
+            for (Object o1 : movieCollection.getCollection()) {
+                Movie movie1 = (Movie) o1;
                 if (movie.getId() == movie1.getId() && !movie.equals(movie1)) {
                     movieCollection.removeMovie(movie);
                 }
             }
         }
-        for (Movie movie : movieCollection.getCollection()) {
+        for (Object o : movieCollection.getCollection()) {
+            Movie movie = (Movie) o;
             boolean toBeRemoved = false;
             if (movie.getId() <= 0) {
                 toBeRemoved = true;

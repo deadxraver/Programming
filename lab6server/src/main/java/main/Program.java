@@ -1,89 +1,84 @@
 package main;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.HashMap;
-import java.util.NoSuchElementException;
+import java.nio.charset.StandardCharsets;
 
 import com.thoughtworks.xstream.XStream;
 import annotations.MainMethod;
-import clientcommunication.RequestPackage;
-import clientcommunication.ResponsePackage;
+import communication.RequestPackage;
+import communication.ResponsePackage;
 import com.thoughtworks.xstream.security.AnyTypePermission;
-import com.thoughtworks.xstream.security.TypePermission;
 import commandhelper.Message;
-import commands.AddIfMax;
+import elements.Movie;
 import elements.MovieCollection;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import parsers.CollectionParser;
 import parsers.FileDataParser;
-// + Модуль приёма подключений.
-// + Модуль чтения запроса.
-// - Модуль обработки полученных команд.
-// + Модуль отправки ответов клиенту.
 
-public class Program {
+public final class Program {
     public Program(int port) throws IOException {
         this.port = port;
+        logger = LoggerFactory.getLogger(this.getClass());
         createChannel();
+        reader = new BufferedReader(new InputStreamReader(System.in));
         sc = null;
-        waitingForMovie = false;
-//        logger = LoggerFactory.getLogger(this.getClass());
         xStream = new XStream();
         xStream.addPermission(AnyTypePermission.ANY);
-        collection = CollectionParser.parse((MovieCollection) xStream.fromXML(FileDataParser.parse(System.getenv("COLLECTION"))));
+        collection = CollectionParser.parse((MovieCollection) xStream.fromXML(FileDataParser.parse(new String(new FileInputStream(System.getenv("COLLECTION")).readAllBytes(), StandardCharsets.UTF_8))));
     }
     public final int port;
-//    private Logger logger;
+    private final Logger logger;
     private ServerSocketChannel ssc;
     private SocketChannel sc;
-    private boolean waitingForMovie;
     private final MovieCollection collection;
     private final XStream xStream;
+    private final BufferedReader reader;
 
 
     @MainMethod
-    public void execute() {
-        try {
-            createChannel();
-        } catch (IOException e) {
-            System.out.println("Could not create channel");
-            System.exit(1);
-        }
-        try {
+    public void execute() throws IOException {
             while (true) {
-                if (!acceptConnection()) continue; // todo (try reading from console)
-                RequestPackage<?> requestPackage = getRequest();
-                assert requestPackage != null;
-                waitingForMovie = requestPackage.command().getClass().equals(AddIfMax.class);
-                Message message = requestPackage.command().execute(collection, requestPackage.argument());
-            }
-        } catch (Throwable e) {
-            String content = xStream.toXML(collection);
-            try (FileWriter fw = new FileWriter(System.getenv("COLLECTION"))) {
-                fw.write(content);
-            } catch (IOException ex) {
-                System.out.println("No file declared");
+                if (acceptConnection()) {
+                    try (Socket socket = sc.socket()) {
+                        RequestPackage<?> requestPackage = getRequest(socket);
+                        Message message = requestPackage.command().execute(collection, requestPackage.argument());
+                        sendResponse(new ResponsePackage(message), socket);
+                    } catch (IOException | ClassNotFoundException e) {
+                        logger.info(e.getMessage());
+                    }
+                } else if (reader.ready()) {
+                    String input = reader.readLine().trim();
+                    if (input.equals("exit") || input.equals("save")) {
+                        try (FileOutputStream fos = new FileOutputStream(System.getenv("COLLECTION"))) {
+                            fos.write(xStream.toXML(collection).getBytes());
+                        }
+                        if (input.equals("exit")) System.exit(0);
+                    }
+                }
             }
         }
 
-    }
-    private void createChannel() throws IOException {
-        ssc = ServerSocketChannel.open();
-        ssc.socket().bind(new InetSocketAddress(this.port));
-        ssc.configureBlocking(false);
-        System.out.println("The server is active. Current address is " + ssc.getLocalAddress());
+    private void createChannel() {
+        try {
+            ssc = ServerSocketChannel.open();
+            ssc.bind(new InetSocketAddress(this.port));
+            ssc.configureBlocking(false);
+            logger.info("The server is active. Current address is {}", ssc.socket().getInetAddress().getHostAddress());
+        } catch (IOException e) {
+            logger.info("Error: ", new Throwable("Could not create channel"));
+            System.exit(1);
+        }
     }
 
     private boolean acceptConnection() {
         try {
             if ((sc = ssc.accept()) == null) throw new IOException();
+            logger.info("Client connected");
             return true;
         } catch (IOException e) {
             return false;
@@ -94,26 +89,32 @@ public class Program {
      *
      * @param  response	response to client's request
      */
-    private void sendResponse(ResponsePackage<?> response) {
-        try (
-                ObjectOutputStream oos = new ObjectOutputStream(sc.socket().getOutputStream())
-                ) {
+    private void sendResponse(ResponsePackage response, Socket socket) throws IOException {
+                ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             oos.writeObject(response);
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+            oos.flush();
+            logger.info("Response sent, {}", response);
     }
     /**
      * Method used to get request from client and return it as a package
      *
      * @return         requestPackage RequestPackage element
      */
-    private RequestPackage<?> getRequest() {
+    private RequestPackage<?> getRequest(Socket socket) throws IOException, ClassNotFoundException {
+                ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+            RequestPackage<?> rp = (RequestPackage<?>) ois.readObject();
+            logger.info("Request received, {}", rp);
+            return rp;
+    }
+
+    private Movie getMovie() {
         try (
                 ObjectInputStream ois = new ObjectInputStream(sc.socket().getInputStream())
                 ) {
-
-            return (RequestPackage<?>) ois.readObject();
+            Movie movie = (Movie) ois.readObject();
+            logger.info("Movie received: {} ", movie);
+            ois.close();
+            return movie;
         } catch (IOException | ClassNotFoundException e) {
             System.out.println(e.getMessage());
             return null;

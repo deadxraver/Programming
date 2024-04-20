@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String... args) throws IOException {
 
-        new Program().execute();
+        new Program("localhost", 1841).execute();
 
     }
 

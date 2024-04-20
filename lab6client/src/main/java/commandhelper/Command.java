@@ -1,7 +1,6 @@
 package commandhelper;
 
 import elements.MovieCollection;
-import servercommunication.Message;
 
 
 @FunctionalInterface

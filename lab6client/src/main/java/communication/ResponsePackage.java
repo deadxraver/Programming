@@ -1,4 +1,6 @@
-package servercommunication;
+package communication;
+
+import commandhelper.Message;
 
 import java.io.Serial;
 import java.io.Serializable;

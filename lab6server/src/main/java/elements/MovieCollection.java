@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import elements.MpaaRating;
-
 public class MovieCollection {
     public MovieCollection(LocalDate creationDate, Movie... movies) {
         this.creationDate = creationDate;
@@ -17,8 +15,8 @@ public class MovieCollection {
         collection.addAll(Arrays.asList(movies));
     }
 
-    private LocalDate creationDate;
-    private LinkedList<Movie> collection;
+    private final LocalDate creationDate;
+    private final LinkedList<Movie> collection;
 
     public Movie getElement(long id) throws NoSuchMovieException {
         for (Movie movie : collection) {
@@ -135,16 +133,16 @@ public class MovieCollection {
         throw new EmptyCollectionException();
     }
 
-    public Person[] getOperatorList() {
+    public Object[] getOperatorList() {
         ArrayList<Person> list = new ArrayList<>();
         for (Movie movie : collection) {
             if (movie.getOperator() != null) list.add(movie.getOperator());
         }
-        return (Person[]) list.toArray();
+        return list.toArray();
     }
 
-    public Movie[] getCollection() {
-        return (Movie[]) collection.toArray();
+    public Object[] getCollection() {
+        return collection.toArray();
     }
 
     @Override

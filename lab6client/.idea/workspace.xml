@@ -5,8 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01873605-68c2-47a9-89b7-37b1792d9a65" name="Changes" comment="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready">
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/EmptyCollectionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NoSuchMovieException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/annotations/MainMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commands/UpdateExecution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/NoSuchCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/WrongNumberOfArguments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab6server/.idea/artifacts/lab6server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab6server/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab6server/src/main/java/commands/UpdateExecution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$CoordinatesHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator$PersonHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/commands/MovieGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Coordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Coordinates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/elements/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/elements/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/main/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/main/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/servercommunication/CommandType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/servercommunication/RequestPackage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/servercommunication/ResponsePackage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Main.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commandhelper/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commandhelper/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/AddIfMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/MaxByMpaaRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/MaxByMpaaRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/PrintFieldAscendingOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/PrintFieldAscendingOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveAllByOscarsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveAllByOscarsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveHead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveLower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveLower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commandhelper/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/RequestPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/communication/RequestPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servercommunication/ResponsePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/communication/ResponsePackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/collection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/collection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/clientcommunication/RequestPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/communication/RequestPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/clientcommunication/ResponsePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/communication/ResponsePackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/commandhelper/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/commandhelper/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/commands/PrintFieldAscendingOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/commands/PrintFieldAscendingOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/commands/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/elements/MovieCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/elements/MovieCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/main/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/main/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/parsers/CollectionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/parsers/CollectionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab6server/src/main/java/parsers/FileDataParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab6server/src/main/java/parsers/FileDataParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +119,18 @@
     </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/deadxraver/Programming.git",
-    "accountId": "9d9a8162-7197-4611-978a-5ea2221672c5"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;deadxraver&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/deadxraver/Programming.git&quot;,
+    &quot;accountId&quot;: &quot;9d9a8162-7197-4611-978a-5ea2221672c5&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -77,32 +142,35 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.lab6client [:Main.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dead_/IdeaProjects/Programming/lab6client/src/main/java/exceptions",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.lab6client [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dead_/IdeaProjects/Programming/lab6client/src/main/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="exceptions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dead_\IdeaProjects\Programming\lab6client\src\main\java\exceptions" />
       <recent name="C:\Users\dead_\IdeaProjects\Programming\lab6client\src\main\java" />
+      <recent name="C:\Users\dead_\IdeaProjects\Programming\lab6client\src\main\java\exceptions" />
       <recent name="C:\Users\dead_\ITMO\git\Programming1\lab6client\src\main\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -111,6 +179,7 @@
       <recent name="commandhelper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="commandhelper" />
       <recent name="servercommunication" />
     </key>
   </component>
@@ -149,7 +218,21 @@
       <workItem from="1712173968390" duration="73000" />
       <workItem from="1712180080514" duration="93000" />
       <workItem from="1712960563382" duration="652000" />
-      <workItem from="1712965045246" duration="9585000" />
+      <workItem from="1712965045246" duration="9687000" />
+      <workItem from="1713017894960" duration="2523000" />
+      <workItem from="1713020688164" duration="39000" />
+      <workItem from="1713024937517" duration="3165000" />
+      <workItem from="1713253994213" duration="15000" />
+      <workItem from="1713287549209" duration="45000" />
+      <workItem from="1713388464436" duration="80000" />
+      <workItem from="1713388555351" duration="72000" />
+      <workItem from="1713391084130" duration="2188000" />
+      <workItem from="1713444034157" duration="1890000" />
+      <workItem from="1713544042272" duration="14000" />
+      <workItem from="1713546851420" duration="1266000" />
+      <workItem from="1713555263664" duration="15024000" />
+      <workItem from="1713571694534" duration="537000" />
+      <workItem from="1713572393201" duration="6196000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -199,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712975242964</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: remade commands logic, now server and client are to communicate using serializable command classes; by now client is fully ready">
+      <option name="closed" value="true" />
+      <created>1712975302818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712975302818</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
